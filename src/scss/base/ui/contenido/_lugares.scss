@@ -1,0 +1,28 @@
+@use "base/variables" as v;
+@use "base/mixins" as m;
+
+.lugares {
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(4, 30rem);
+    overflow-y: hidden;
+    overflow-x: scroll;
+    gap: 2rem;
+    scroll-snap-type: x mandatory;
+    @include m.tablet {
+      @include m.grid(2, 2rem);
+      overflow-x: auto;
+    }
+    @include m.desktop {
+      @include m.grid(4, 2rem);
+      overflow-x: auto;
+    }
+  }
+}
+
+.lugar{
+    scroll-snap-align: center;
+    &__imagen{
+        border-radius: 1rem;
+    }
+}
